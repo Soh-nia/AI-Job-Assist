@@ -25,7 +25,7 @@ Both generate sequentially with live streaming so you see the output as it's wri
 
 ```bash
 # Clone
-git clone https://github.com/YOUR_USERNAME/apply-ai
+git clone https://github.com/Soh-nia/AI-Job-Assist.git
 cd apply-ai
 
 # Install
@@ -73,7 +73,6 @@ This app calls the Anthropic API directly from the browser. Your API key is stor
 
 ## Planned features
 
-- [ ] PDF CV upload (parse and use as experience input)
 - [ ] Multiple job description comparison
 - [ ] Save applications history
 - [ ] Export to PDF/Word

@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-slate-800 antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+  ::selection {
+    @apply bg-brand-100 text-brand-900;
+  }
+}
+
+@layer components {
+  .prose-output {
+    @apply text-slate-700 leading-relaxed;
+  }
+  .prose-output h2 {
+    @apply font-display font-bold text-slate-900 text-lg mt-6 mb-2;
+  }
+  .prose-output ul {
+    @apply space-y-1.5 list-none pl-0;
+  }
+  .prose-output ul li {
+    @apply flex gap-2 text-sm;
+  }
+  .prose-output p {
+    @apply text-sm text-slate-600 leading-relaxed mb-3;
+  }
+  .cursor-blink::after {
+    content: "│";
+    @apply text-brand-500 ml-0.5;
+    animation: blink 0.8s ease-in-out infinite;
+  }
+}
+
+@font-face {
+  font-family: "Transforma Mix";
+  src:
+    url("./assets/fonts/TransformaMix_Trial-ExtraLight.woff2") format("woff2"),
+    url("./assets/fonts/TransformaMix_Trial-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Transforma Mix";
+  src:
+    url("./assets/fonts/TransformaMix_Trial-Light.woff2") format("woff2"),
+    url("./assets/fonts/TransformaMix_Trial-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Transforma Mix";
+  src:
+    url("./assets/fonts/TransformaMix_Trial-Regular.woff2") format("woff2"),
+    url("./assets/fonts/TransformaMix_Trial-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Transforma Mix";
+  src:
+    url("./assets/fonts/TransformaMix_Trial-Medium.woff2") format("woff2"),
+    url("./assets/fonts/TransformaMix_Trial-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Transforma Mix";
+  src:
+    url("./assets/fonts/TransformaMix_Trial-SemiBold.woff2") format("woff2"),
+    url("./assets/fonts/TransformaMix_Trial-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: initial; /* Lenis handles smooth scroll */
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-brand-charcoal);
+  background-color: var(--color-brand-dark);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure Tailwind font-sans maps to Helvetica body font */
+.font-sans {
+  font-family: var(--font-body) !important;
+}
+
+.font-display {
+  font-family: var(--font-display) !important;
+}

@@ -4,6 +4,7 @@
  */
 
 import * as pdfjsLib from 'pdfjs-dist';
+import pdfjsWorker from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 import mammoth from 'mammoth';
 
 export type SupportedFileType = "pdf" | "docx" | "txt";
@@ -21,8 +22,9 @@ export interface ParseResult {
 export const ACCEPTED_CV_TYPES = ".pdf,.docx,.txt";
 export const MAX_FILE_SIZE_MB = 10;
 
-// Set up PDF.js worker (important!)
-pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.worker.min.mjs`;
+// Set up PDF.js worker (important!) — bundled locally so its version always
+// matches the installed pdfjs-dist API version.
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 // ─── File type detection ───────────────────────────────────────────────────
 
